@@ -19,9 +19,12 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from email_token.views import register_page, verify
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register-page/', register_page , name='register'),
+    path('verify/<str:email_token>', verify, name='verify')
 ]
 
 

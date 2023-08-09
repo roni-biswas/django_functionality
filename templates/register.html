@@ -1,0 +1,42 @@
+{% extends 'base/index.html' %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-4">
+            <div class="form-container mt-5">
+                <h4 class="text-primary">Sign up</h4>
+                <form method="post">
+                    {% csrf_token %}
+                    {% include 'base/alert.html' %}
+                    <div class="form-group">
+                        <input name="first_name" class="form-control" placeholder="First Name" type="text">
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                        <input name="last_name" class="form-control" placeholder="Last Name" type="text">
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                        <input name="email" class="form-control" placeholder="Email" type="email">
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                        <input name="password" class="form-control" placeholder="Password" type="password">
+                    </div> <!-- form-group// -->
+                
+                    <!-- <div class="form-group">
+                            <a href="#" class="float-right">Forgot password?</a>
+                            <label class="float-left custom-control custom-checkbox"> <input type="checkbox"
+                                    class="custom-control-input" checked="">
+                                <div class="custom-control-label"> Remember </div>
+                            </label>
+                        </div> form-group form-check .// -->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Sign Up </button>
+                    </div> <!-- form-group// -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
